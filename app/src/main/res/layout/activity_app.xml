@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="app.di_v.computus.ui.AppViewModel" />
+
+        <variable
+            name="adapter"
+            type="app.di_v.computus.adapters.HistoryCalcAdapter" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/fragment_calculator"
+            app:viewModel="@{viewModel}" />
+
+        <include layout="@layout/fragment_bottom_sheet"
+            app:viewModel="@{viewModel}"
+            app:adapter="@{adapter}" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
